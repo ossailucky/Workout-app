@@ -29,6 +29,7 @@ export const getWorkout = async (req,res)=>{
 export const createWorkout = async (req,res)=>{
     const {title, reps, load} = req.body;
 
+
     //  add doc to db
     try{
         const workout = await Workout.create({title,reps,load});
