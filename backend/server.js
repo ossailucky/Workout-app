@@ -4,8 +4,7 @@ dotenv.config();
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import workoutRoutes from "./routes/workouts.js";
-
-
+import userRoutes from "./routes/user.js"
 
 //express
 
@@ -15,7 +14,6 @@ const PORT = process.env.PORT || 3000;
 //app.use(express.json);
 app.use(bodyParser.json());
 
-//app.use(bodyParser.urlencoded({extended: true}))
 
 
 app.use((req,res,next)=>{
@@ -24,6 +22,7 @@ app.use((req,res,next)=>{
 })
 // routes
 app.use("/api/workouts", workoutRoutes);
+app.use("/api/user",userRoutes)
 
 //connect to db
 
